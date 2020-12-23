@@ -1,0 +1,855 @@
+{%  load static %}
+{% static "images" as baserUrl %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>zapproductpage</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'styles/productpage.css' %}">
+        <!-- font awesome -->
+        <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    
+        <!--icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+        <!-- CSS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
+    <!-- jQuery and JS bundle w/ Popper.js -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+
+    <link rel="preconnect" href=" https://fonts.gstatic.com ">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@500&family=Goldman&family=Inconsolata:wght@500&family=Indie+Flower&family=Texturina:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@500&family=Goldman&family=Inconsolata:wght@500&family=Texturina:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="{%static 'https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Texturina:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="{%static 'https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@500&family=Texturina:wght@300&display=swap " rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@500&family=Goldman&family=Texturina:wght@300&display=swap" rel="stylesheet">
+ 
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root{
+    --white-light: rgba(255, 255, 255, 0.5);
+    --alice-blue: #f8f9fa;
+    --carribean-green: #40c9a2;
+    --gray: #ededed;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Utility stylings */
+img{
+    width: 100%;
+    display: block;
+}
+.container{
+    width: 88vw;
+    margin: 0 auto;
+}
+.lg-title,
+.md-title,
+.sm-title{
+    font-family: 'Roboto', sans-serif;
+    padding: 0.6rem 0;
+    text-transform: capitalize;
+}
+.lg-title{
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 1.3rem 0;
+    opacity: 0.9;
+}
+.md-title{
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+.sm-title{
+    font-weight: 300;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+.text-light{
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    opacity: 0.5;
+    margin: 0.4rem 0;
+}
+
+/* product section */
+.products{
+    background: var(--alice-blue);
+    padding: 3.2rem 0;
+}
+.products .text-light{
+    text-align: center;
+    width: 70%;
+    margin: 0.9rem auto;
+}
+.product{
+    margin: 2rem;
+    position: relative;
+}
+.product-content{
+    background: var(--gray);
+    padding: 3rem 0.5rem 2rem 0.5rem;
+    cursor: pointer;
+}
+.product-img{
+    background: var(--white-light);
+    box-shadow: 0 0 20px 10px var(--white-light);
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    transition: background 0.5s ease;
+}
+.product-btns{
+    display: flex;
+    justify-content: center;
+    margin-top: 1.4rem;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+.btn-cart, .btn-buy{
+    background: transparent;
+    border: 1px solid black;
+    padding: 0.8rem 0;
+    width: 125px;
+    font-family: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: all 0.6s ease;
+}
+.btn-cart{
+    background: black;
+    color: white;
+}
+.btn-cart:hover{
+    background: var(--carribean-green);
+}
+.btn-buy{
+    background: white;
+}
+.btn-buy:hover{
+    background: var(--carribean-green);
+    color: #fff;
+}
+.product-info{
+    background: white;
+    padding: 2rem;
+}
+.product-info-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rating span{
+    color: var(--carribean-green);
+}
+.product-name{
+    color: black;
+    display: block;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.product-price{
+    padding-top: 0.6rem;
+    padding-right: 0.6rem;
+    display: inline-block;
+}
+.product-price:first-of-type{
+    text-decoration: line-through;
+    color: var(--carribean-green);
+}
+.product-img img{
+    transition: transform 0.6s ease;
+}
+.product:hover .product-img img{
+    transform: scale(1.1);
+}
+.product:hover .product-img{
+    background: var(--carribean-green);
+}
+.product:hover .product-btns{
+    opacity: 1;
+}
+.off-info .sm-title{
+    background: var(--carribean-green);
+    color: white;
+    display: inline-block;
+    padding: 0.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    z-index: 1;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+/* product collection */
+.product-collection{
+    padding: 3.2rem 0;
+}
+.product-collection-wrapper{
+    padding: 3.2rem 0;
+}
+.product-col-left{
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("{% static 'images/sale9.png' %}") center/cover no-repeat;
+}
+.product-col-r-top{
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("{% static 'images/sale12.png' %}") center/cover no-repeat;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 50vh;
+    padding: 2rem 1.5rem 3.2rem;
+    margin: 5px;
+}
+.product-col-r-bottom > div:first-child{
+    background: #eaa001;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("{% static 'images/sale10.png' %}") center/cover no-repeat;
+}
+.product-col-r-bottom > div:last-child{
+    background: #0090ff;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("{% static 'images/sale11.png' %}") center/cover no-repeat;
+}
+.product-col-content{
+    text-align: center;
+    color: white;
+}
+.product-collection .text-light{
+    opacity: 1;
+    font-size: 0.8;
+    font-weight: 400;
+    line-height: 1.7;
+}
+.btn-dark{
+    background: black;
+    color: white;
+    outline: 0;
+    border-radius: 25px;
+    padding: 0.7rem 1rem;
+    border: 0;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    font-size: 1rem;
+    font-family: inherit;
+}
+.btn-dark:hover{
+    background: var(--carribean-green);
+}
+
+/* Media Queries */
+@media screen and (min-width: 992px){
+    .product-items{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .product-col-r-bottom{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (min-width: 1200px){
+    .product-items{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .product{
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+    .products .text-light{
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1336px){
+    .product-items{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .product-collection-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .flex{
+        height: 60vh;
+    }
+    .product-col-left{
+        height: 121.5vh;
+    }
+}
+.et-2{
+    font-size: 20px;
+    font-family: 'Indie Flower', cursive;
+    }
+.my-2{
+        font-family: 'Indie Flower', cursive;
+        font-size: 20px;
+}
+.nav-link{
+    font-family: 'Big Shoulders Stencil Display', cursive;
+font-family: 'Texturina', serif;
+font-family: Arial, Helvetica, sans-serif;
+}
+.navbar-text{
+    font-size: 20px;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+font-family: 'Texturina', serif;
+}
+.nav-item{
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: cursive;
+}
+
+</style> 
+    </head>
+
+    <body>
+
+        <!--navbar-->
+    <nav class="navbar py-1 navbar-expand-md bg-primary navbar-dark sticky-top ">
+
+       <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+        <span class= "navbar-toggler-icon"></span>
+       </button >
+
+       <div class=" collapse navbar-collapse" id="collapse_target">
+       
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'images/logo.PNG' %}" alt="logo" style="width: 120px; height: 50px;">
+        </a>
+        <ul class="navbar-nav ">
+          <li class="nav-item active dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">
+                Mobiles
+                <span class="caret"></span>
+            </a>
+            <div class ="dropdown-menu" aria-labelledby="dropdown-target">
+                <!-- <ul class="navbar-nav"> -->
+                <a class="dropdown-item"> 1</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item"> 1</a>
+                <a class="dropdown-item"> 1</a>
+            <!-- </ul> for horizontal -->
+            </div>
+
+            <li class="nav-item active dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">
+                    Fashion
+                    <span class="caret"></span>
+                </a>
+                <div class ="dropdown-menu" aria-labelledby="dropdown-target">
+                    <!-- <ul class="navbar-nav"> -->
+                    <a class="dropdown-item"> 1</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"> 1</a>
+                    <a class="dropdown-item"> 1</a>
+                <!-- </ul> for horizontal -->
+                </div>
+          </li>
+          <li class="nav-item active dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">
+                HouseHold
+                <span class="caret"></span>
+            </a>
+            <div class ="dropdown-menu" aria-labelledby="dropdown-target">
+                <!-- <ul class="navbar-nav"> -->
+                <a class="dropdown-item"> 1</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item"> 1</a>
+                <a class="dropdown-item"> 1</a>
+            <!-- </ul> for horizontal -->
+            </div>
+            </li>
+            <li class="nav-item active dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">
+                    Sports
+                    <span class="caret"></span>
+                </a>
+                <div class ="dropdown-menu" aria-labelledby="dropdown-target">
+                    <!-- <ul class="navbar-nav"> -->
+                    <a class="dropdown-item"> 1</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"> 1</a>
+                    <a class="dropdown-item"> 1</a>
+                <!-- </ul> for horizontal -->
+                </div>
+            </li>
+            <li class="nav-item active dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">
+                   Accessories
+                    <span class="caret"></span>
+                </a>
+                <div class ="dropdown-menu" aria-labelledby="dropdown-target">
+                    <!-- <ul class="navbar-nav"> -->
+                    <a class="dropdown-item"> 1</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"> 1</a>
+                    <a class="dropdown-item"> 1</a>
+                <!-- </ul> for horizontal -->
+                </div>
+                </li>
+            <li class="nav-item active dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">
+                Gifts
+                <span class="caret"></span>
+            </a>
+            <div class ="dropdown-menu" aria-labelledby="dropdown-target">
+                <!-- <ul class="navbar-nav"> -->
+                <a class="dropdown-item"> 1</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item"> 1</a>
+                <a class="dropdown-item"> 1</a>
+            <!-- </ul> for horizontal -->
+            </div>
+            </li>
+            <li class="nav-item active dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">
+                Hardware
+                <span class="caret"></span>
+            </a>
+            <div class ="dropdown-menu" aria-labelledby="dropdown-target">
+                <!-- <ul class="navbar-nav"> -->
+                <a class="dropdown-item"> 1</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item"> 1</a>
+                <a class="dropdown-item"> 1</a>
+            <!-- </ul> for horizontal -->
+            </div>
+            </li>
+            <li class="nav-item active dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">
+                    Beauty
+                    <span class="caret"></span>
+                </a>
+                <div class ="dropdown-menu" aria-labelledby="dropdown-target">
+                    <!-- <ul class="navbar-nav"> -->
+                    <a class="dropdown-item"> 1</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"> 1</a>
+                    <a class="dropdown-item"> 1</a>
+                <!-- </ul> for horizontal -->
+                </div>
+                </li>
+            
+         <li class="nav-item active dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">
+                Decorative
+                <span class="caret"></span>
+            </a>
+            <div class ="dropdown-menu" aria-labelledby="dropdown-target">
+                <!-- <ul class="navbar-nav"> -->
+                <a class="dropdown-item"> 1</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item"> 1</a>
+                <a class="dropdown-item"> 1</a>
+            <!-- </ul> for horizontal -->
+            </div>
+            </li>
+            <li class="nav-item active dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">
+                    Stationary
+                    <span class="caret"></span>
+                </a>
+                <div class ="dropdown-menu" aria-labelledby="dropdown-target">
+                    <!-- <ul class="navbar-nav"> -->
+                    <a class="dropdown-item"> 1</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"> 1</a>
+                    <a class="dropdown-item"> 1</a>
+                <!-- </ul> for horizontal -->
+                </div>
+                </li>
+        </ul>
+        <span class="navbar-text">
+        <a href="#"> CART <i class="fas fa-shopping-cart"></i></a>        
+        </span>
+    </div>
+    </div>
+      </nav>
+      <div class = "products">
+            <div class = "container-fluid">
+                <h1 class = "lg-title" style=";padding-top: 0px;padding-bottom: 0px;font-family:fantasy;font-size:40px">GRAB YOUR PRODUCT !</h1>             
+                <div class = "product-items">
+                    <!-- single product 1 -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "{% static 'images/choco.PNG' %}" width="100%" height="auto"  alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button  type = "button" class = "btn-cart"> <a href="#cart" style="text-decoration: none;color:white">Add to Cart</a>
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button  type = "button" class = "btn-buy"><a href="#buycart" style="text-decoration: none;color:black">buy now</a> 
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">lifestyle</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">mens shoes DN 23XX, new product</a>
+                            <p class = "product-price">$ 150.00</p>
+                            <p class = "product-price">$ 133.00</p>
+                        </div>
+
+                        <div class = "off-info">
+                            <h2 class = "sm-title">25% off</h2>
+                        </div>
+                    </div>
+                    <!-- end of single product1 -->
+                    <!-- single product 2 -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "{% static 'images/mobile1.png' %}" width="auto" height="100%" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"><a href="#cart" style="text-decoration: none;color:white">Add to Cart</a>
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> <a href="#buycart" style="text-decoration: none;color:black">buy now</a>
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">lifestyle</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">mens shoes DN 23XX, new product</a>
+                            <p class = "product-price">$ 150.00</p>
+                            <p class = "product-price">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product2 -->
+                    <!-- single product3 -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "{% static 'images/shoe-3.png' %}" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> <a href="#cart" style="text-decoration: none;color:white">Add to Cart</a>
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> <a href="#buycart" style="text-decoration: none;color:black">buy now</a>
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">lifestyle</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">mens shoes DN 23XX, new product</a>
+                            <p class = "product-price">$ 150.00</p>
+                            <p class = "product-price">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product 3-->
+                    <!-- single product 4 -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "{% static 'images/shoe-4.png' %}" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"><a href="#cart" style="text-decoration: none;color:white">Add to Cart</a>
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> <a href="#buycart" style="text-decoration: none;color:black">buy now</a>
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">lifestyle</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">mens shoes DN 23XX, new product</a>
+                            <p class = "product-price">$ 150.00</p>
+                            <p class = "product-price">$ 133.00</p>
+                        </div>
+
+                        <div class = "off-info">
+                            <h2 class = "sm-title">25% off</h2>
+                        </div>
+                    </div>
+                    <!-- end of single product4 -->
+                    <!-- single product 5-->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "{% static 'images/shoe-5.png' %}" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> <a href="#cart" style="text-decoration: none;color:white">Add to Cart</a>
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"><a href="#buycart" style="text-decoration: none;color:black">buy now</a>
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">lifestyle</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">womens shoes DN 23XX, new product</a>
+                            <p class = "product-price">$ 150.00</p>
+                            <p class = "product-price">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product5 -->
+                    <!-- single product6 -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "{% static 'images/shoe-6.png' %}" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> <a href="#cart" style="text-decoration: none;color:white">Add to Cart</a>
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"><a href="#buycart" style="text-decoration: none;color:black">buy now</a>
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">lifestyle</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">womens shoes DN 23XX, new product</a>
+                            <p class = "product-price">$ 150.00</p>
+                            <p class = "product-price">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product6 -->
+                    <!-- single product 7 -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "{% static 'images/shoe-7.png' %}" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> <a href="#cart" style="text-decoration: none;color:white">Add to Cart</a>
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> <a href="#buycart" style="text-decoration: none;color:black">buy now</a>
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">lifestyle</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">womens shoes DN 23XX, new product</a>
+                            <p class = "product-price">$ 150.00</p>
+                            <p class = "product-price">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product 7-->
+                    <!-- single product 8 -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "{% static 'images/shoe-8.png' %}" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> <a href="#cart" style="text-decoration: none;color:white">Add to Cart</a>
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> <a href="#buycart" style="text-decoration: none;color:black">buy now</a>
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">lifestyle</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">womens shoes DN 23XX, new product</a>
+                            <p class = "product-price">$ 150.00</p>
+                            <p class = "product-price">$ 133.00</p>
+                        </div>
+
+                        <div class = "off-info">
+                            <h2 class = "sm-title">35% off</h2>
+                        </div>
+                    </div>
+                    <!-- end of single product 8 -->
+                </div>
+            </div>
+        </div>
+        
+        <footer class="page-footer bg-dark">
+            <div class="bg-primary">
+                <div class="container">
+                    <div class="row py-2 d-flex align-items-center">
+                        <div class="col-md-12 text-center">                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center text-md-left mt-5 text-white">
+                <div class="row">
+                    <div class="col-md-4 mx-auto mb-4">
+                        <h3 class=" text-uppercase font-weight-bold ">ShopZAP</h3>
+                        <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto"style="width:80px; height:2px">
+                        <p class="et-2 ">Humans are creatures of community, so the easiest way to connect with the customers is to show the people you are working with. 
+                             It makes everything you do seem more human and more relatable.</p>
+                    </div>
+    
+                    <div class="col-md-2 mx-auto mb-4 text-white">
+                        <h3 class="text-uppercase font-weight-bold">Get to know Us</h3>
+                        <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto"style="width:140px; height:2px">
+                    <ul class="list-unstyled ">
+                        <li class="my-2"> <a href="#" style="color: white;">About Us</a></li>
+                        <li class="my-2"><a href="#" style="color: white;">Careers</a></li>
+                        <li class="my-2"><a href="#" style="color: white;">Wholesale</a></li>
+                        <li class="my-2"><a href="#" style="color: white;">Press Releases</a></li>
+                        <li class="my-2"><a href="#" style="color: white;">Gift Cards</a></li>
+                    </ul>
+                    </div>
+    
+                    <div class="col-md-2 mx-auto mb-4 text-white">
+                        <h3 class="text-uppercase font-weight-bold">Policies</h3>
+                        <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto"style="width:70px; height:2px">
+                        <ul class="list-unstyled">
+                            <li class="my-2"><a href="#" style="color: white;"> Terms of use</a></li>
+                            <li class="my-2"><a href="#" style="color: white;">Cancellation & Returns</a></li>
+                            <li class="my-2"><a href="#"style="color: white;">Privacy Policy</a></li>
+                            <li class="my-2"><a href="#" style="color: white;">EMI Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="col-md-3 mx-auto mb-4 text-white">
+                        <h3 class="text-uppercase font-weight-bold">Contact</h3>
+                        <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto"style="width:75px; height:2px">
+                        <ul class="list-unstyled">
+                            <li class="my-2"><i class="fas fa-home mr-3"></i>India</li>
+                            <li class="my-2"><i class="fas fa-envelope mr-3 "></i>shozap@gmail.com</li>
+                            <li class="my-2"><i class="fas fa-phone mr-3"></i>+91 9711190345</li>
+                            <li class="my-2"><i class="fas fa-print mr-3"></i>+91 9790011342</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class=" shopap-copyright text-center py-3 text-white">
+                <p style="font-size: 15px;">&copy; Copyright <a href="#" style="font-size: 15px;">shozap.com</a></p>
+                <p style="font-size: 15px;">Designed By ShopZap</p>
+            </div>
+            <div class="bg-primary">
+                <div class="container">
+                    <div class="row py-3 d-flex align-items-center">
+                        <div class="col-md-12 text-center">
+                            <a href="#"><i class="fab fa-facebook-f text-white mr-4"></i></a>
+                            <a href="#"><i class="fab fa-twitter text-white mr-4"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-g text-white mr-4"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in text-white mr-4"></i></a>
+                            <a href="#"><i class="fab fa-instagram text-white mr-4"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
